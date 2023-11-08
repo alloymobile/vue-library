@@ -1,14 +1,15 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
+  <span :class="iconClass">
+    <font-awesome-icon :icon="icon" />
+  </span>
 </template>
 
 <script>
 export default {
   name: 'AlloyIcon',
   props: {
-    msg: String
+    icon: String,
+    iconClass: String
   }
 }
 </script>

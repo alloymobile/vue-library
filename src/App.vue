@@ -1,18 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App" icon="fa-solid fa-user-secret"/>
-  <AlloyIcon msg="Welcome to Your Vue.js App"/>
+  <AlloyButtonIcon 
+  icon="fa-solid fa-user-secret" 
+  iconClass="btn btn-primary" 
+  name="Click me" 
+  buttonClass="btn btn-primary d-flex flex-column align-items-center"
+  @enlarge-text="onEnlargeText"
+/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import AlloyIcon from './lib/cell/icon/AlloyIcon.vue'
+import AlloyButtonIcon from './lib/cell/button/ButtonIcon.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    AlloyIcon
+    AlloyButtonIcon
   }
 }
 </script>
