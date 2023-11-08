@@ -1,5 +1,5 @@
 <template>
-    <button type="button" :class="buttonClass" @click="myMethod" @mouseenter="myMethod">
+    <button type="button" :class="buttonClass" @click="onClickButton(id)">
         <AlloyIcon :icon="icon" :iconClass="iconClass"/>
         <span class="px-2">{{ name }}</span>
     </button>
@@ -11,6 +11,7 @@ import AlloyIcon from '../icon/AlloyIcon.vue';
   export default {
     name: 'AlloyButtonIcon',
     props: {
+        id: String,
         icon: String,
         iconClass: String,
         name: String,
@@ -18,9 +19,9 @@ import AlloyIcon from '../icon/AlloyIcon.vue';
     },
     components: { AlloyIcon },
     methods: {
-    myMethod: function myMethod(ev) {
-      alert('Button clicked!'+ev); 
-    }
+     onClickButton(e) {
+         this.$emit('clicked',e )
+     }
   }
 }
   </script>

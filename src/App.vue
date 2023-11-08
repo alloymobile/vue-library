@@ -1,11 +1,25 @@
 <template>
   <AlloyButtonIcon 
+  id = "button1"
   icon="fa-solid fa-user-secret" 
   iconClass="btn btn-primary" 
-  name="Click me" 
-  buttonClass="btn btn-primary d-flex flex-column align-items-center"
-  @enlarge-text="onEnlargeText"
+  name="button1" 
+  buttonClass="btn btn-primary mx-2"
+  @clicked="onClickChild"
 />
+<AlloyButtonIcon 
+  id = "button2"
+  icon="fa-solid fa-user-secret" 
+  iconClass="btn btn-primary" 
+  name="button2" 
+  buttonClass="btn btn-primary mx-2"
+  @clicked="onClickChild"
+/>
+<ol id="example-3">
+<li v-for="item in itemslist" :key="item.id">
+{{ item.message }}
+</li>
+</ol>
 </template>
 
 <script>
@@ -15,6 +29,19 @@ export default {
   name: 'App',
   components: {
     AlloyButtonIcon
+  },
+  methods: {
+    onClickChild (value) {
+        alert(value) // someValue
+    }
+  },
+  data() {
+    return {
+      itemslist: [
+        { id: 1, message: 'Foo' },
+        { id: 2, message: 'Bar' }
+      ]
+    }
   }
 }
 </script>
