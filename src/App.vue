@@ -1,34 +1,30 @@
 <template>
+  <AlloyInput
+    id = "input1"
+    label="Input 1"
+    type="text"
+    placeholder="Input 1"
+    inputClass="form-control m-2"
+  />
   <AlloyButtonIcon 
-  id = "button1"
-  icon="fa-solid fa-user-secret" 
-  iconClass="btn btn-primary" 
-  name="button1" 
-  buttonClass="btn btn-primary mx-2"
-  @clicked="onClickChild"
+    id = "button1"
+    icon="fa-solid fa-user-secret" 
+    iconClass="btn btn-primary" 
+    name="button1" 
+    buttonClass="btn btn-primary m-2"
+    @clicked="onClickChild"
 />
-<AlloyButtonIcon 
-  id = "button2"
-  icon="fa-solid fa-user-secret" 
-  iconClass="btn btn-primary" 
-  name="button2" 
-  buttonClass="btn btn-primary mx-2"
-  @clicked="onClickChild"
-/>
-<ol id="example-3">
-<li v-for="item in itemslist" :key="item.id">
-{{ item.message }}
-</li>
-</ol>
 </template>
 
 <script>
 import AlloyButtonIcon from './lib/cell/button/ButtonIcon.vue'
+import AlloyInput from './lib/input/AlloyInput.vue'
 
 export default {
   name: 'App',
   components: {
-    AlloyButtonIcon
+    AlloyButtonIcon,
+    AlloyInput
   },
   methods: {
     onClickChild (value) {
