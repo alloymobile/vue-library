@@ -6,6 +6,7 @@
                 :type="type"
                 :placeholder="placeholder"
                 :class="inputClass"
+                @input="onInput"
             />
         </div>
 </template>
@@ -18,11 +19,11 @@
             label: String,
             type: String,
             placeholder: String,
-            inputClass: String,
+            inputClass: String
         },
         methods: {
-            formOutput(e) {
-                this.$emit('clicked',e )
+            onInput(e) {
+                this.$emit('input', e.target.value)
             }
         }
     }
